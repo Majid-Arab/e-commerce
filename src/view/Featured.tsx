@@ -45,12 +45,14 @@ export default function Featured() {
           </div>
 
           {/* Second Mobile/Frame Box */}
-          <div className="bg-gray-200 px-5 pt-5 ml-5 ">
-            <h2>Flex Push Button Bombe</h2>
-            <p>
-              <span>$225.00</span> $190.00
-            </p>
-            <Image src={Event3} alt="event3" className="w-30 object-top" />
+          <div className="bg-gray-200 px-5 pt-5 ml-5 flex flex-col justify-between ">
+            <div>
+              <h2>Flex Push Button Bombe</h2>
+              <p>
+                <span>$225.00</span> $190.00
+              </p>
+            </div>
+            <Image src={Event3} alt="event3" className="w-30 object-top " />
           </div>
         </div>
       </div>

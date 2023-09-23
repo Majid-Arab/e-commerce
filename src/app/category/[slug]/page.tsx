@@ -3,7 +3,10 @@ import ProductList from "@/view/ProductList";
 import { StaticImageData } from "next/image";
 
 const getProductsCategory = (category: string) => {
-  return Products.filter((product) => product.category === category);
+  return Products.filter(
+    (product) =>
+      product.category.toLocaleLowerCase() === category.toLocaleLowerCase()
+  );
 };
 
 export default function Page({ params }: { params: { slug: string } }) {
