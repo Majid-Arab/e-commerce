@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/view/ProductCard";
 import Featured from "@/view/Featured";
 import Hero from "@/view/Hero";
 import Newsletter from "@/view/Newsletter";

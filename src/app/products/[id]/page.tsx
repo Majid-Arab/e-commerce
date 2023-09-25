@@ -1,32 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { Products } from "@/utils/mock";
-import ProductList from "@/view/ProductList";
 import Image, { StaticImageData } from "next/image";
 
 const getProductID = (id: number) => {
   return Products.filter((product) => product.id == id);
 };
 
-export default function Page({ params }: { params: { slug: number } }) {
-  const id = getProductID(params.slug);
+export default function Page({ params }: { params: { id: number } }) {
+  const id = getProductID(params.id);
   return (
-    <div className="flex">
+    <div>
       {id.map((product) => (
-        <div key={product.id} className="flex">
-          <div>
+        <div key={product.id}>
+          <div className="flex">
             <div>
               <Image src={product.image} alt="product" />
             </div>
-            <div></div>
-            <div>
-              <h1>{product.title}</h1>
-              <h2>{product.name}</h2>
-              <span>SELECT SIZE</span>
+            <div className="flex">
               <div>
-                <h4>Quantity</h4>
+                <Image src={product.image} alt="product" />
               </div>
+              <div></div>
               <div>
-                <Button>Add to Cart</Button> <span>{product.price}</span>
+                <h1>{product.title}</h1>
+                <h2>{product.name}</h2>
+                <span>SELECT SIZE</span>
+                <div>
+                  <h4>Quantity</h4>
+                </div>
+                <div>
+                  <Button>Add to Cart</Button> <span>{product.price}</span>
+                </div>
               </div>
             </div>
           </div>

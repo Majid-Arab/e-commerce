@@ -1,5 +1,5 @@
 import { Products } from "@/utils/mock";
-import ProductList from "@/view/ProductList";
+import ProductList from "@/components/ProductList";
 import { StaticImageData } from "next/image";
 
 const getProductsCategory = (category: string) => {
@@ -17,6 +17,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         category.map((product) => (
           <ProductList
             key={product.id}
+            id={product.id}
             title={product.title}
             name={product.name}
             price={product.price}
