@@ -1,35 +1,77 @@
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Products } from "@/utils/mock";
+import { ShoppingCartIcon } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 
 const getProductID = (id: number) => {
   return Products.filter((product) => product.id == id);
 };
-
+const size = ["XS", "S", "M", "L", "XL"];
 export default function Page({ params }: { params: { id: number } }) {
   const id = getProductID(params.id);
+
   return (
     <div>
       {id.map((product) => (
-        <div key={product.id}>
+        <div key={product.id} className="pt-20">
           <div className="flex">
-            <div>
-              <Image src={product.image} alt="product" />
+            <div className="pr-8">
+              <Image
+                src={product.image}
+                alt="product"
+                width={100}
+                height={100}
+              />
             </div>
+
             <div className="flex">
               <div>
-                <Image src={product.image} alt="product" />
+                <Image src={product.image} alt="product" width={571} />
               </div>
-              <div></div>
-              <div>
-                <h1>{product.title}</h1>
-                <h2>{product.name}</h2>
-                <span>SELECT SIZE</span>
+
+              <div className="flex flex-col justify-between h-80 pl-3 mt-16	">
                 <div>
-                  <h4>Quantity</h4>
+                  <h1 className="text-3xl">{product.title}</h1>
+                  <h2 className="text-2xl text-gray-300">{product.name}</h2>
                 </div>
                 <div>
-                  <Button>Add to Cart</Button> <span>{product.price}</span>
+                  <div>
+                    <span className="font-bold">SELECT SIZE</span>
+                  </div>
+                  <div className="pt-5 flex justify-start gap-5 text-gray-500	">
+                    {size.map((size) => (
+                      <button className="radius-full h-10 w-10 rounded-full hover:bg-slate-100">
+                        <span className="font-bold">{size}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between  w-60">
+                  <h4 className="font-bold">Quantity:</h4>
+                  <div className="flex items-center gap-2">
+                    <button className="radius-full h-10 w-10 rounded-full bg-slate-200  hover:bg-slate-300">
+                      <span className="text-2xl">-</span>
+                    </button>
+                    <p>0</p>
+                    <button className="radius-full h-10 w-10 rounded-full bg-slate-200  hover:bg-slate-300">
+                      <span className="text-2xl">+</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="flex items-center gap-5">
+                  <div>
+                    <Button className="font-bold ">
+                      <ShoppingCartIcon className="mr-2 h-4 w-4" />
+                      Add to Cart
+                    </Button>
+                  </div>
+                  <div>
+                    <span className="text-2xl font-bold">
+                      ${product.price}.00
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

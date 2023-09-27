@@ -1,6 +1,7 @@
 import React from "react";
 import { Product } from "./products";
 import p4 from "/public/p4.png";
+import p3 from "/public/p3.png";
 
 export const Products: Product[] = [
   {
