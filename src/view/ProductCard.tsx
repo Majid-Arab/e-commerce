@@ -18,7 +18,7 @@ export default function ProductCard() {
       <h1 className="text-3xl text-center font-bold -pr-40 my-6">
         Our Promotions Events
       </h1>
-      <div className="flex justify-evenly ">
+      <div className="flex ">
         {productCheck.map((product) => (
           <ProductList
             key={product.id}

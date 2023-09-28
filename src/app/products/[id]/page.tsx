@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Products } from "@/utils/mock";
 import { ShoppingCartIcon } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import MathNumbers from "@/components/Number";
 
 const getProductID = (id: number) => {
   return Products.filter((product) => product.id == id);
@@ -48,17 +49,9 @@ export default function Page({ params }: { params: { id: number } }) {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between  w-60">
+                <div className="flex items-center justify-start gap-10 ">
                   <h4 className="font-bold">Quantity:</h4>
-                  <div className="flex items-center gap-2">
-                    <button className="radius-full h-10 w-10 rounded-full bg-slate-200  hover:bg-slate-300">
-                      <span className="text-2xl">-</span>
-                    </button>
-                    <p>0</p>
-                    <button className="radius-full h-10 w-10 rounded-full bg-slate-200  hover:bg-slate-300">
-                      <span className="text-2xl">+</span>
-                    </button>
-                  </div>
+                  <MathNumbers />
                 </div>
                 <div className="flex items-center gap-5">
                   <div>
