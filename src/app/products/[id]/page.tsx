@@ -69,8 +69,15 @@ export default function Page({ params }: { params: { id: number } }) {
               </div>
             </div>
           </div>
-          <div>
-            <h3>Product Information</h3>
+          <div className="">
+            <div className="relative">
+              <div className="absolute font-bold text-9xl text-gray-100">
+                Overview
+              </div>
+              <div className="absolute">
+                <h3 className=" font-bold text-2xl">Product Information</h3>
+              </div>
+            </div>
             <div>
               <h4>PRODUCT DETAILS</h4>
               <p>
@@ -82,8 +89,6 @@ export default function Page({ params }: { params: { id: number } }) {
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
-            </div>
-            <div>
               <h4>PRODUCT CARE</h4>
               <ul>
                 <li>Hand wash using cold water.</li>
